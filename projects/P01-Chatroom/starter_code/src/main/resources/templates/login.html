@@ -151,6 +151,24 @@
      */
     function login() {
         // TODO: complete the login function
+        const username = $("#username").val();
+        $(".act-but").prop("disables", true);
+        
+        $.ajax({
+            type: "GET",
+            contentType: "application/json",
+            url: "/index",
+            data: username,
+            data_type: "plain/text",
+            success: function (data) {
+                console.log("SUCCESS : ", data);
+                $("#btn-search").prop("disabled", false);
+            },
+            error: function(e) {
+                console.log("ERROR : ", e);
+                $("#btn-search").prop("disabled", false);
+            }
+        })
     }
 
     /**

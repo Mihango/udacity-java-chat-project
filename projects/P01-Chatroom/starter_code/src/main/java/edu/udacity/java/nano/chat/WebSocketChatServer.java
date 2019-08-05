@@ -33,6 +33,7 @@ public class WebSocketChatServer {
     @OnOpen
     public void onOpen(Session session) {
         //TODO: add on open connection.
+        onlineSessions.put(session.getId(), session);
     }
 
     /**
@@ -49,6 +50,11 @@ public class WebSocketChatServer {
     @OnClose
     public void onClose(Session session) {
         //TODO: add close connection.
+        onlineSessions.forEach((index, ses) -> {
+            if(ses == session) {
+                onlineSessions.remove(index);
+            }
+        });
     }
 
     /**
