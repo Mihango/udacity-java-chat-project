@@ -153,7 +153,9 @@
         // TODO: complete the login function
         const username = $("#username").val();
         $(".act-but").prop("disables", true);
-        
+
+        location.href = "/index?username="+username;
+
         $.ajax({
             type: "GET",
             contentType: "application/json",

@@ -76,7 +76,8 @@
         /**
          * WebSocket client PS：URL shows WebSocket protocal, port number, and then end point.
          */
-        var webSocket = new WebSocket(/*[[${webSocketUrl}]]*/ 'ws://localhost:8080/chat');
+        /*[[${webSocketUrl}]]*/
+        var webSocket = new WebSocket('ws://localhost:8080/chat');
         /**
          * websocket open connection.
          */
@@ -121,10 +122,11 @@
         webSocket.onerror = function (event) {
             console.log('WebSocket exception.');
         };
+
         return webSocket;
     }
 
-    var webSocket = getWebSocket();
+    const webSocket = getWebSocket();
 
 
     /**

@@ -3,7 +3,6 @@ package edu.udacity.java.nano;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -32,10 +31,11 @@ public class WebSocketChatApplication {
      */
     @GetMapping("/index")
     public ModelAndView index(String username, HttpServletRequest request) throws UnknownHostException {
+        System.out.println("Username " + username);
         //add user to Model And View and navigate
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("username", username);
         modelAndView.setViewName("chat");
-        return null;
+        return modelAndView;
     }
 }
