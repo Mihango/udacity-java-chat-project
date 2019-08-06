@@ -13,9 +13,20 @@ public class Message {
     @JSONField(name = "msg")
     private String msg;
 
-    public Message(String username, String msg) {
+    @JSONField(name = "type")
+    private String type;
+
+    public Message() {
+    }
+
+    public Message(String msg) {
+        this.msg = msg;
+    }
+
+    public Message(String username, String msg, String type) {
         this.username = username;
         this.msg = msg;
+        this.type = type;
     }
 
     public String getUsername() {
@@ -32,5 +43,13 @@ public class Message {
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

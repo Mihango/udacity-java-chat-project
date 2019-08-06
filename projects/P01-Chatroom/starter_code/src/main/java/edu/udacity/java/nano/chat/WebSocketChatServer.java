@@ -26,10 +26,9 @@ public class WebSocketChatServer {
     private static Map<String, Session> onlineSessions = new ConcurrentHashMap<>();
 
     private static void sendMessageToAll(String msg) {
-        //TODO: add send message method.
         onlineSessions.forEach((s, session) -> {
             try {
-                session.getBasicRemote().sendText(JSON.toJSONString(new Message(null, msg)));
+                session.getBasicRemote().sendText(msg);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -41,7 +40,6 @@ public class WebSocketChatServer {
      */
     @OnOpen
     public void onOpen(Session session) {
-        //TODO: add on open connection.
         onlineSessions.put(session.getId(), session);
     }
 
@@ -50,9 +48,9 @@ public class WebSocketChatServer {
      */
     @OnMessage
     public void onMessage(Session session, String jsonStr) {
-        //TODO: add send message.
         Message message = JSON.parseObject(jsonStr, Message.class);
-        sendMessageToAll(message.getMsg());
+        message.setType("SPEAK");
+        sendMessageToAll(JSON.toJSONString(message));
     }
 
     /**
@@ -60,7 +58,6 @@ public class WebSocketChatServer {
      */
     @OnClose
     public void onClose(Session session) {
-        //TODO: add close connection.
         onlineSessions.forEach((index, ses) -> {
             if(ses == session) {
                 onlineSessions.remove(index);
