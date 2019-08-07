@@ -50,7 +50,7 @@ public class WebSocketChatServer {
     public void onMessage(Session session, String jsonStr) {
         Message message = JSON.parseObject(jsonStr, Message.class);
         message.setType("SPEAK");
-        sendMessageToAll(JSON.toJSONString(message));
+        sendMessageToAll(JSON.toJSONString(new UserResponse(message.getUsername(), message.getMsg(), "SPEAK", onlineSessions.size())));
     }
 
     /**

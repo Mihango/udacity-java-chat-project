@@ -2,10 +2,7 @@ package edu.udacity.java.nano.chat;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
-/**
- * WebSocket message model
- */
-public class Message {
+public class UserResponse {
 
     @JSONField(name = "username")
     private String username;
@@ -16,17 +13,17 @@ public class Message {
     @JSONField(name = "type")
     private String type;
 
-    public Message() {
+    @JSONField(name = "onlineCount")
+    private int onlineUsers;
+
+    public UserResponse() {
     }
 
-    public Message(String msg) {
-        this.msg = msg;
-    }
-
-    public Message(String username, String msg, String type) {
+    public UserResponse(String username, String msg, String type, int onlineUsers) {
         this.username = username;
         this.msg = msg;
         this.type = type;
+        this.onlineUsers = onlineUsers;
     }
 
     public String getUsername() {
@@ -51,5 +48,13 @@ public class Message {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public int getOnlineUsers() {
+        return onlineUsers;
+    }
+
+    public void setOnlineUsers(int onlineUsers) {
+        this.onlineUsers = onlineUsers;
     }
 }
