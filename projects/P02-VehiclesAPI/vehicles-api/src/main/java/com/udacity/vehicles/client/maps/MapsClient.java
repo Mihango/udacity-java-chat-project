@@ -44,7 +44,7 @@ public class MapsClient {
                     .retrieve().bodyToMono(Address.class).block();
 
             mapper.map(Objects.requireNonNull(address), location);
-
+            location.setAddress(address.getCity());
             return location;
         } catch (Exception e) {
             log.warn("Map service is down");
