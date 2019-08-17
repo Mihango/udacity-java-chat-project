@@ -1,6 +1,7 @@
 package com.udacity.course3.reviews.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -13,12 +14,14 @@ public class Product {
     private Integer id;
 
     @Column(name = "NAME")
+    @NotNull
     private String name;
 
     @Column(name = "DESCRIPTION")
     private String description;
 
     @Column(name = "PRICE")
+    @NotNull
     private Double price;
 
     @OneToMany(mappedBy = "product")

@@ -4,6 +4,11 @@ import com.udacity.course3.reviews.models.Product;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Optional;
+
 @Repository
-public interface ProductRepository extends CrudRepository<Product, Long> {
+public interface ProductRepository extends CrudRepository<Product, Integer> {
+    List<Product> findAll();
+    Optional<Product> findByName(String name);
 }

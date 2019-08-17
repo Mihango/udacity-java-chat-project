@@ -1,6 +1,7 @@
 package com.udacity.course3.reviews.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
@@ -17,12 +18,14 @@ public class Review {
     private String reviewer;
 
     @Column(name = "REVIEW")
+    @NotNull
     private String review;
 
     @Column(name = "CREATED_AT")
     private Date createdAt;
 
     @Column(name = "PRODUCT_ID")
+    @NotNull
     private Integer productId;
 
     @ManyToOne(fetch = FetchType.LAZY)

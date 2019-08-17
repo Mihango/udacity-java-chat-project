@@ -1,5 +1,9 @@
 package com.udacity.course3.reviews.controller;
 
+import com.udacity.course3.reviews.models.Review;
+import com.udacity.course3.reviews.repository.ProductRepository;
+import com.udacity.course3.reviews.repository.ReviewRepository;
+import javassist.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +17,14 @@ import java.util.List;
 @RestController
 public class ReviewsController {
 
-    // TODO: Wire JPA repositories here
+    // Wire JPA repositories here
+    private ReviewRepository reviewRepository;
+    private ProductRepository productRepository;
+
+    public ReviewsController(ReviewRepository reviewRepository, ProductRepository productRepository) {
+        this.reviewRepository = reviewRepository;
+        this.productRepository = productRepository;
+    }
 
     /**
      * Creates a review for a product.
@@ -27,8 +38,14 @@ public class ReviewsController {
      * @return The created review or 404 if product id is not found.
      */
     @RequestMapping(value = "/reviews/products/{productId}", method = RequestMethod.POST)
-    public ResponseEntity<?> createReviewForProduct(@PathVariable("productId") Integer productId) {
-        throw new HttpServerErrorException(HttpStatus.NOT_IMPLEMENTED);
+    public ResponseEntity<?> createReviewForProduct(@PathVariable("productId") Integer productId, @RequestBody Review review) throws Exception {
+        Review savedReview;
+        if(productRepository.findById(productId).isPresent()) {
+            review.setProductId(productId);
+            savedReview = reviewRepository.save(review);
+            return ResponseEntity.ok(savedReview);
+        }
+        throw new NotFoundException("Product with id " + productId + "not found");
     }
 
     /**
@@ -39,6 +56,6 @@ public class ReviewsController {
      */
     @RequestMapping(value = "/reviews/products/{productId}", method = RequestMethod.GET)
     public ResponseEntity<List<?>> listReviewsForProduct(@PathVariable("productId") Integer productId) {
-        throw new HttpServerErrorException(HttpStatus.NOT_IMPLEMENTED);
+        return ResponseEntity.ok(reviewRepository.findAll());
     }
 }
