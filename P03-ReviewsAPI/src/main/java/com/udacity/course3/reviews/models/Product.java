@@ -1,5 +1,8 @@
 package com.udacity.course3.reviews.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -24,6 +27,7 @@ public class Product {
     @NotNull
     private Double price;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "product")
     private List<Review> reviews;
 

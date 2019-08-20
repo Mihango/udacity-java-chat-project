@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpServerErrorException;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -42,6 +43,7 @@ public class ReviewsController {
         Review savedReview;
         if(productRepository.findById(productId).isPresent()) {
             review.setProductId(productId);
+            review.setCreatedAt(new Date());
             savedReview = reviewRepository.save(review);
             return ResponseEntity.ok(savedReview);
         }

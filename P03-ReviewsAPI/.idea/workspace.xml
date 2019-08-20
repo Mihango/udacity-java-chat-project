@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b2921f40-4e0a-4ae4-a2ea-2a0f2d08e3a9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/config/Error.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/config/ExceptionAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V2_0__foreign_constraints.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/ReviewsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/ReviewsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/controller/CommentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/controller/CommentsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/controller/ReviewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/controller/ReviewsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/models/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/models/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/models/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/models/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1_0__Create_tables_Initial_version.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1_0__Create_tables_Initial_version.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projects/P02-VehiclesAPI/pricing-service/pricing-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../projects/P02-VehiclesAPI/pricing-service/pricing-service.iml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="jdnd_c3@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="jdnd_c3@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="jdnd_c3@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="jdnd_c3: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="cLHGpcAD" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1PQPuWChEV9uoNeaYNVmWMxnDXc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="h2&#10;mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ReviewsApplication">
+    <configuration name="CommentRepositoryTest.findComments" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="reviews" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.course3.reviews.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udacity.course3.reviews.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.course3.reviews.repository.CommentRepositoryTest" />
+      <option name="METHOD_NAME" value="findComments" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentRepositoryTest.findCommentsByReviewId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="reviews" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.course3.reviews.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udacity.course3.reviews.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.course3.reviews.repository.CommentRepositoryTest" />
+      <option name="METHOD_NAME" value="findCommentsByReviewId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentRepositoryTest.injectedNotNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="reviews" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.course3.reviews.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udacity.course3.reviews.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.course3.reviews.repository.CommentRepositoryTest" />
+      <option name="METHOD_NAME" value="injectedNotNull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReviewRepositoryTest.findReviews" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="reviews" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.course3.reviews.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udacity.course3.reviews.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.course3.reviews.repository.ReviewRepositoryTest" />
+      <option name="METHOD_NAME" value="findReviews" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReviewRepositoryTest.findReviewsByProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="reviews" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.course3.reviews.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udacity.course3.reviews.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.course3.reviews.repository.ReviewRepositoryTest" />
+      <option name="METHOD_NAME" value="findReviewsByProduct" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReviewsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="reviews" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.udacity.course3.reviews.ReviewsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ReviewRepositoryTest.findReviewsByProduct" />
+        <item itemvalue="JUnit.CommentRepositoryTest.findCommentsByReviewId" />
+        <item itemvalue="JUnit.CommentRepositoryTest.findComments" />
+        <item itemvalue="JUnit.CommentRepositoryTest.injectedNotNull" />
+        <item itemvalue="JUnit.ReviewRepositoryTest.findReviews" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b2921f40-4e0a-4ae4-a2ea-2a0f2d08e3a9" name="Default Changelist" comment="" />
+      <created>1565803569308</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1565803569308</updated>
+      <workItem from="1565803570489" duration="1929000" />
+      <workItem from="1565867075927" duration="136000" />
+      <workItem from="1565867227426" duration="605000" />
+      <workItem from="1565950121698" duration="694000" />
+      <workItem from="1566035345187" duration="12669000" />
+      <workItem from="1566194613610" duration="2770000" />
+      <workItem from="1566319373755" duration="1539000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="748" y="170" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
+    <state x="748" y="170" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.1080" />
+    <state x="1178" y="325" key="#com.intellij.fileTypes.FileTypeChooser" />
+    <state x="1178" y="325" key="#com.intellij.fileTypes.FileTypeChooser/1920.1080" />
+    <state x="1162" y="234" key="#com.intellij.ide.util.MemberChooser" />
+    <state x="1162" y="234" key="#com.intellij.ide.util.MemberChooser/1920.1080" />
+    <state x="894" y="258" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" />
+    <state x="894" y="258" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/1920.1080" />
+    <state x="655" y="342" key="com.intellij.ide.util.TipDialog" />
+    <state x="655" y="342" key="com.intellij.ide.util.TipDialog/1920.1080" />
+  </component>
+</project>

@@ -1,5 +1,8 @@
 package com.udacity.course3.reviews.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -24,7 +27,8 @@ public class Comment {
     @NotNull
     private Integer reviewId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "REVIEW_ID", insertable = false, updatable = false)
     private Review review;
 

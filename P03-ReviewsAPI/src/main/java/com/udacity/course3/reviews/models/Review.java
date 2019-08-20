@@ -1,10 +1,14 @@
 package com.udacity.course3.reviews.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "review")
 public class Review {
@@ -28,10 +32,13 @@ public class Review {
     @NotNull
     private Integer productId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    @JsonIgnoreProperties(value = {"reviews"})
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "PRODUCT_ID", insertable = false, updatable = false)
     private Product product;
 
+    @JsonIgnoreProperties(value = {"review"})
     @OneToMany(mappedBy = "review")
     private List<Comment> comments;
 
