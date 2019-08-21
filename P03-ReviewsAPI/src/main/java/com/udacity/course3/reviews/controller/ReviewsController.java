@@ -1,12 +1,15 @@
 package com.udacity.course3.reviews.controller;
 
+import com.udacity.course3.reviews.models.payload.ReviewPayload;
 import com.udacity.course3.reviews.models.relational.Review;
 import com.udacity.course3.reviews.repository.ProductRepository;
 import com.udacity.course3.reviews.repository.ReviewRepository;
+import com.udacity.course3.reviews.services.ReviewService;
 import javassist.NotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Date;
 import java.util.List;
 
@@ -17,11 +20,11 @@ import java.util.List;
 public class ReviewsController {
 
     // Wire JPA repositories here
-    private ReviewRepository reviewRepository;
+    private ReviewService reviewService;
     private ProductRepository productRepository;
 
-    public ReviewsController(ReviewRepository reviewRepository, ProductRepository productRepository) {
-        this.reviewRepository = reviewRepository;
+    public ReviewsController(ReviewService reviewService, ProductRepository productRepository) {
+        this.reviewService = reviewService;
         this.productRepository = productRepository;
     }
 
@@ -37,14 +40,14 @@ public class ReviewsController {
      * @return The created review or 404 if product id is not found.
      */
     @RequestMapping(value = "/reviews/products/{productId}", method = RequestMethod.POST)
-    public ResponseEntity<?> createReviewForProduct(@PathVariable("productId") Integer productId, @RequestBody Review review) throws Exception {
+    public ResponseEntity<?> createReviewForProduct(@PathVariable("productId") Integer productId, @Valid @RequestBody ReviewPayload review) throws Exception {
         Review savedReview;
         if(productRepository.findById(productId).isPresent()) {
             review.setProductId(productId);
-            review.setCreatedAt(new Date());
-            savedReview = reviewRepository.save(review);
-            return ResponseEntity.ok(savedReview);
+            ReviewPayload payload = reviewService.saveReview(review);
+            return ResponseEntity.ok(payload);
         }
+
         throw new NotFoundException("Product with id " + productId + "not found");
     }
 
@@ -56,6 +59,6 @@ public class ReviewsController {
      */
     @RequestMapping(value = "/reviews/products/{productId}", method = RequestMethod.GET)
     public ResponseEntity<List<?>> listReviewsForProduct(@PathVariable("productId") Integer productId) {
-        return ResponseEntity.ok(reviewRepository.findAll());
+        return ResponseEntity.ok(null); //reviewService.findAll());
     }
 }

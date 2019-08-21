@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2921f40-4e0a-4ae4-a2ea-2a0f2d08e3a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/config/ModelMapperConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/models/payload/ReviewPayload.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../P03-ReviewsAPI.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../P03-ReviewsAPI.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/controller/ReviewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/controller/ReviewsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/models/payload/ReviewPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/models/payload/ReviewPayload.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/services/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/services/ReviewService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -242,7 +241,7 @@
       <workItem from="1566194613610" duration="2770000" />
       <workItem from="1566319373755" duration="2746000" />
       <workItem from="1566387039420" duration="907000" />
-      <workItem from="1566404282471" duration="2991000" />
+      <workItem from="1566404282471" duration="4355000" />
     </task>
     <servers />
   </component>
