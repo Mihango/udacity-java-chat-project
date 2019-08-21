@@ -2,28 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2921f40-4e0a-4ae4-a2ea-2a0f2d08e3a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/git" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/config/MongoConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/models/mongo/CommentNosql.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/models/mongo/ReviewNoSql.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/repository/mongo/MongoCommentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/repository/mongo/MongoReviewRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/config/ModelMapperConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/models/payload/ReviewPayload.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../P03-ReviewsAPI.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../P03-ReviewsAPI.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/controller/CommentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/controller/CommentsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/controller/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/controller/ProductsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/controller/ReviewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/controller/ReviewsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/models/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/models/relational/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/models/relational/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/models/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/models/relational/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/repository/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/repository/CommentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/repository/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/repository/ReviewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/udacity/course3/reviews/repository/CommentRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/udacity/course3/reviews/repository/CommentRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/udacity/course3/reviews/repository/ProductRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/udacity/course3/reviews/repository/ProductRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/udacity/course3/reviews/repository/ReviewRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/udacity/course3/reviews/repository/ReviewRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/services/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/course3/reviews/services/ReviewService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -258,7 +242,7 @@
       <workItem from="1566194613610" duration="2770000" />
       <workItem from="1566319373755" duration="2746000" />
       <workItem from="1566387039420" duration="907000" />
-      <workItem from="1566404282471" duration="2316000" />
+      <workItem from="1566404282471" duration="2991000" />
     </task>
     <servers />
   </component>
