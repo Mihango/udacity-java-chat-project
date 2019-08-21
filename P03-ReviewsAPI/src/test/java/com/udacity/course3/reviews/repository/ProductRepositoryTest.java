@@ -1,6 +1,6 @@
 package com.udacity.course3.reviews.repository;
 
-import com.udacity.course3.reviews.models.Product;
+import com.udacity.course3.reviews.models.relational.Product;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

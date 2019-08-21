@@ -1,13 +1,11 @@
 package com.udacity.course3.reviews.controller;
 
-import com.udacity.course3.reviews.models.Review;
+import com.udacity.course3.reviews.models.relational.Review;
 import com.udacity.course3.reviews.repository.ProductRepository;
 import com.udacity.course3.reviews.repository.ReviewRepository;
 import javassist.NotFoundException;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.HttpServerErrorException;
 
 import java.util.Date;
 import java.util.List;

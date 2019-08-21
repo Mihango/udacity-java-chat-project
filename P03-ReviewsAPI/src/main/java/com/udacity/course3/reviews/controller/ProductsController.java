@@ -1,11 +1,10 @@
 package com.udacity.course3.reviews.controller;
 
-import com.udacity.course3.reviews.models.Product;
+import com.udacity.course3.reviews.models.relational.Product;
 import com.udacity.course3.reviews.repository.ProductRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.HttpServerErrorException;
 
 import java.util.List;
 import java.util.Optional;

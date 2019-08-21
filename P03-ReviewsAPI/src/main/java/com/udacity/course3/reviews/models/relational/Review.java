@@ -1,7 +1,9 @@
-package com.udacity.course3.reviews.models;
+package com.udacity.course3.reviews.models.relational;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.udacity.course3.reviews.models.relational.Comment;
+import com.udacity.course3.reviews.models.relational.Product;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

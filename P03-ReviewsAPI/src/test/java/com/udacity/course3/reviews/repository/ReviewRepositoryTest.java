@@ -1,14 +1,13 @@
 package com.udacity.course3.reviews.repository;
 
-import com.udacity.course3.reviews.models.Product;
-import com.udacity.course3.reviews.models.Review;
+import com.udacity.course3.reviews.models.relational.Product;
+import com.udacity.course3.reviews.models.relational.Review;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
