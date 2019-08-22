@@ -59,6 +59,6 @@ public class ReviewsController {
      */
     @RequestMapping(value = "/reviews/products/{productId}", method = RequestMethod.GET)
     public ResponseEntity<List<?>> listReviewsForProduct(@PathVariable("productId") Integer productId) {
-        return ResponseEntity.ok(null); //reviewService.findAll());
+        return ResponseEntity.ok(reviewService.findAll());
     }
 }

@@ -6,9 +6,12 @@ import com.udacity.course3.reviews.models.relational.Review;
 import com.udacity.course3.reviews.repository.ReviewRepository;
 import com.udacity.course3.reviews.repository.mongo.MongoReviewRepository;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Type;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class ReviewService {
@@ -42,5 +45,11 @@ public class ReviewService {
         ReviewNoSql savedReviewNoSql = mongoReviewRepository.save(reviewNoSql);
 
         return modelMapper.map(savedReviewNoSql, ReviewPayload.class);
+    }
+
+    public List<ReviewPayload> findAll() {
+        List<ReviewNoSql> reviews = mongoReviewRepository.findAll();
+        Type listType = new TypeToken<List<ReviewPayload>>() {}.getType();
+        return modelMapper.map(reviews, listType);
     }
 }
