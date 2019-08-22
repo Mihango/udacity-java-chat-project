@@ -1,13 +1,16 @@
 package com.udacity.course3.reviews.controller;
 
+import com.udacity.course3.reviews.models.payload.CommentPayload;
 import com.udacity.course3.reviews.models.relational.Comment;
 import com.udacity.course3.reviews.models.relational.Review;
 import com.udacity.course3.reviews.repository.CommentRepository;
 import com.udacity.course3.reviews.repository.ReviewRepository;
+import com.udacity.course3.reviews.services.ReviewService;
 import javassist.NotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -22,10 +25,12 @@ public class CommentsController {
     //  Wire needed JPA repositories here
     private ReviewRepository reviewRepository;
     private CommentRepository commentRepository;
+    private ReviewService reviewService;
 
-    public CommentsController(ReviewRepository reviewRepository, CommentRepository commentRepository) {
+    public CommentsController(ReviewRepository reviewRepository, CommentRepository commentRepository, ReviewService reviewService) {
         this.reviewRepository = reviewRepository;
         this.commentRepository = commentRepository;
+        this.reviewService = reviewService;
     }
 
     /**
@@ -39,15 +44,15 @@ public class CommentsController {
      * @param reviewId The id of the review.
      */
     @RequestMapping(value = "/reviews/{reviewId}", method = RequestMethod.POST)
-    public ResponseEntity<?> createCommentForReview(@PathVariable("reviewId") Integer reviewId, @RequestBody Comment comment) throws Exception{
-        Optional<Review> optional = reviewRepository.findById(reviewId);
+    public ResponseEntity<?> createCommentForReview(@PathVariable("reviewId") Integer reviewId, @Valid @RequestBody CommentPayload comment) throws Exception{
+        Optional<Review> optional = reviewService.findById(reviewId);
         if(optional.isPresent()) {
-            comment.setCreatedAt(new Date());
-            Comment savedComment = commentRepository.save(comment);
+            CommentPayload savedComment = reviewService.saveComment(comment);
             return ResponseEntity.ok(savedComment);
         }
 
-        throw new NotFoundException("Review does not exist");
+        // todo return notFound
+        return ResponseEntity.notFound().build();
     }
 
     /**
