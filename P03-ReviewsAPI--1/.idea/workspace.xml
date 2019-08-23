@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b2921f40-4e0a-4ae4-a2ea-2a0f2d08e3a9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projects/P02-VehiclesAPI/pricing-service/pricing-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../projects/P02-VehiclesAPI/pricing-service/pricing-service.iml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="jdnd_c3@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="jdnd_c3@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="jdnd_c3@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="jdnd_c3: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../.." value="course3_final_starter" />
+        <entry key="$PROJECT_DIR$/.." value="course2_final_solution" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\Workspace\Learning\Udacity spring course\JDND\P03-ReviewsAPI\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1PdBm17GKidgOaJ7QRaZ1OOqXYs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.ReviewRepositoryTest.findReviewsByProduct">
+    <configuration name="CommentRepositoryTest.findComments" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="reviews" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.course3.reviews.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udacity.course3.reviews.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.course3.reviews.repository.CommentRepositoryTest" />
+      <option name="METHOD_NAME" value="findComments" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentRepositoryTest.findCommentsByReviewId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="reviews" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.course3.reviews.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udacity.course3.reviews.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.course3.reviews.repository.CommentRepositoryTest" />
+      <option name="METHOD_NAME" value="findCommentsByReviewId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentRepositoryTest.injectedNotNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="reviews" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.course3.reviews.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udacity.course3.reviews.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.course3.reviews.repository.CommentRepositoryTest" />
+      <option name="METHOD_NAME" value="injectedNotNull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReviewRepositoryTest.findReviews" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="reviews" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.course3.reviews.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udacity.course3.reviews.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.course3.reviews.repository.ReviewRepositoryTest" />
+      <option name="METHOD_NAME" value="findReviews" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReviewRepositoryTest.findReviewsByProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="reviews" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.course3.reviews.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udacity.course3.reviews.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.course3.reviews.repository.ReviewRepositoryTest" />
+      <option name="METHOD_NAME" value="findReviewsByProduct" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReviewsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="reviews" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.udacity.course3.reviews.ReviewsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ReviewRepositoryTest.findReviewsByProduct" />
+        <item itemvalue="JUnit.ReviewRepositoryTest.findReviews" />
+        <item itemvalue="JUnit.CommentRepositoryTest.injectedNotNull" />
+        <item itemvalue="JUnit.CommentRepositoryTest.findCommentsByReviewId" />
+        <item itemvalue="JUnit.CommentRepositoryTest.findComments" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b2921f40-4e0a-4ae4-a2ea-2a0f2d08e3a9" name="Default Changelist" comment="" />
+      <created>1560833052438</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1560833052438</updated>
+      <workItem from="1560833054773" duration="415000" />
+      <workItem from="1561652978246" duration="883000" />
+      <workItem from="1561653955733" duration="548000" />
+      <workItem from="1561835758426" duration="389000" />
+      <workItem from="1561952624322" duration="578000" />
+      <workItem from="1566194252533" duration="301000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
