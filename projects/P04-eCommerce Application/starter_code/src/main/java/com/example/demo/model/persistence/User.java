@@ -30,6 +30,9 @@ public class User {
 	@Column(nullable = false)
 	@JsonProperty
 	private String password;
+
+	@Column(name = "random_salt", nullable = false)
+	private int randomSalt;
 	
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "cart_id", referencedColumnName = "id")
@@ -66,5 +69,13 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public int getRandomSalt() {
+		return randomSalt;
+	}
+
+	public void setRandomSalt(int randomSalt) {
+		this.randomSalt = randomSalt;
 	}
 }
