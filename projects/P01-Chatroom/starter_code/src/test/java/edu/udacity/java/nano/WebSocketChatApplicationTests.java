@@ -1,4 +1,4 @@
-package com.example.mongo;
+package edu.udacity.java.nano;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MongoSampleApplicationTests {
+public class WebSocketChatApplicationTests {
 
     @Test
     public void contextLoads() {

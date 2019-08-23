@@ -13,7 +13,7 @@
     <div class="mdui-toolbar mdui-color-theme">
         <span class="mdui-typo-title">Chat Room</span>
         <div class="mdui-toolbar-spacer"></div>
-        <a class="mdui-btn mdui-btn-icon" th:href="@{/}">
+        <a id="exit_app" class="mdui-btn mdui-btn-icon" th:href="@{/}">
             <i class="mdui-icon material-icons">exit_to_app</i>
         </a>
     </div>
@@ -36,10 +36,10 @@
                         <input class="mdui-textfield-input" id="msg"/>
                     </div>
                     <div class="mdui-container" style="padding:20px 35px">
-                        <button class="mdui-btn mdui-color-theme mdui-ripple"
+                        <button id="btn_chat" class="mdui-btn mdui-color-theme mdui-ripple"
                                 onclick="sendMsgToServer()">Send
                         </button>
-                        <button class="mdui-btn mdui-color-theme mdui-ripple"
+                        <button id="btn_clear" class="mdui-btn mdui-color-theme mdui-ripple"
                                 onclick="clearMsg()">Clear
                         </button>
                     </div>
@@ -57,7 +57,7 @@
                     <span class="mdui-chip-icon mdui-color-blue">
                         <i class="mdui-icon material-icons">face</i></span>
                     <span class="mdui-chip-title">Online Users</span>
-                    <span class="chat-num"></span>
+                    <span id="chat_count" class="chat-num"></span>
                 </div>
                 <div class="message-container"></div>
             </div>
@@ -79,7 +79,7 @@
          * WebSocket client PS：URL shows WebSocket protocal, port number, and then end point.
          */
         /*[[${webSocketUrl}]]*/
-        var webSocket = new WebSocket('ws://localhost:8080/chat');
+        var webSocket = new WebSocket('ws://localhost:8082/chat');
         /**
          * websocket open connection.
          */
