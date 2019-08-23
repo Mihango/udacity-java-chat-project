@@ -18,6 +18,8 @@ import com.example.demo.model.persistence.repositories.CartRepository;
 import com.example.demo.model.persistence.repositories.UserRepository;
 import com.example.demo.model.requests.CreateUserRequest;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
@@ -40,9 +42,14 @@ public class UserController {
 	}
 	
 	@PostMapping("/create")
-	public ResponseEntity<User> createUser(@RequestBody CreateUserRequest createUserRequest) {
+	public ResponseEntity<?> createUser(@Valid @RequestBody CreateUserRequest createUserRequest) {
+
+		if(createUserRequest.getPassword().equals(createUserRequest.getConfirmPassword()))
+			return ResponseEntity.badRequest().body("Password is not correct");
+
 		User user = new User();
 		user.setUsername(createUserRequest.getUsername());
+
 		Cart cart = new Cart();
 		cartRepository.save(cart);
 		user.setCart(cart);
