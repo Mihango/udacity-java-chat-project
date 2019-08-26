@@ -1,9 +1,8 @@
 package com.example.demo.controllers;
 
-import java.util.Optional;
-
+import com.example.demo.model.persistence.EcommerceUser;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,54 +13,57 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.persistence.Cart;
-import com.example.demo.model.persistence.User;
 import com.example.demo.model.persistence.repositories.CartRepository;
 import com.example.demo.model.persistence.repositories.UserRepository;
 import com.example.demo.model.requests.CreateUserRequest;
 
 import javax.validation.Valid;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
-	
-	@Autowired
-	private UserRepository userRepository;
-	
-	@Autowired
-	private CartRepository cartRepository;
 
-	@Autowired
-	private PasswordEncoder passwordEncoder;
+    @Autowired
+    private UserRepository userRepository;
 
-	@GetMapping("/id/{id}")
-	public ResponseEntity<User> findById(@PathVariable Long id) {
-		return ResponseEntity.of(userRepository.findById(id));
-	}
-	
-	@GetMapping("/{username}")
-	public ResponseEntity<User> findByUserName(@PathVariable String username) {
-		User user = userRepository.findByUsername(username);
-		return user == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(user);
-	}
-	
-	@PostMapping("/create")
-	public ResponseEntity<?> createUser(@Valid @RequestBody CreateUserRequest createUserRequest) {
+    @Autowired
+    private CartRepository cartRepository;
 
-		if(createUserRequest.getPassword().equals(createUserRequest.getConfirmPassword()) || createUserRequest.getPassword().length() < 7)
-			return ResponseEntity.badRequest().body("Password is not correct");
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
-		User user = new User();
-		user.setUsername(createUserRequest.getUsername());
-		user.setPassword(passwordEncoder.encode(createUserRequest.getPassword()));
+    @GetMapping("/id/{id}")
+    public ResponseEntity<EcommerceUser> findById(@PathVariable Long id) {
+        return ResponseEntity.of(userRepository.findById(id));
+    }
 
-		// create random salt
+    @GetMapping("/{username}")
+    public ResponseEntity<EcommerceUser> findByUserName(@PathVariable String username) {
+        EcommerceUser ecommerceUser = userRepository.findByUsername(username);
+        return ecommerceUser == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(ecommerceUser);
+    }
 
-		Cart cart = new Cart();
-		cartRepository.save(cart);
-		user.setCart(cart);
-		userRepository.save(user);
-		return ResponseEntity.ok(user);
-	}
-	
+    @PostMapping("/create")
+    public ResponseEntity<?> createUser(@Valid @RequestBody CreateUserRequest createUserRequest) {
+        log.info("Creating user {}", createUserRequest.getUsername());
+
+        if (!createUserRequest.getPassword().equals(createUserRequest.getConfirmPassword()) || createUserRequest.getPassword().length() < 7) {
+            log.error("Error with user password. Cannot create user {}", createUserRequest.getUsername());
+        	return ResponseEntity.badRequest().body("Password is not correct");
+        }
+
+        EcommerceUser ecommerceUser = new EcommerceUser();
+        ecommerceUser.setUsername(createUserRequest.getUsername());
+        ecommerceUser.setPassword(passwordEncoder.encode(createUserRequest.getPassword()));
+
+        // create random salt
+
+        Cart cart = new Cart();
+        cartRepository.save(cart);
+        ecommerceUser.setCart(cart);
+        userRepository.save(ecommerceUser);
+        return ResponseEntity.ok(ecommerceUser);
+    }
+
 }
