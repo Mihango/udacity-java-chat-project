@@ -48,12 +48,14 @@ public class UserController {
 	@PostMapping("/create")
 	public ResponseEntity<?> createUser(@Valid @RequestBody CreateUserRequest createUserRequest) {
 
-		if(createUserRequest.getPassword().equals(createUserRequest.getConfirmPassword()))
+		if(createUserRequest.getPassword().equals(createUserRequest.getConfirmPassword()) || createUserRequest.getPassword().length() < 7)
 			return ResponseEntity.badRequest().body("Password is not correct");
 
 		User user = new User();
 		user.setUsername(createUserRequest.getUsername());
 		user.setPassword(passwordEncoder.encode(createUserRequest.getPassword()));
+
+		// create random salt
 
 		Cart cart = new Cart();
 		cartRepository.save(cart);
