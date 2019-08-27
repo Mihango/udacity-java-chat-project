@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WebSecurity.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">auth-course</a> &gt; <a href="index.source.html" class="el_package">com.example.demo.security</a> &gt; <span class="el_source">WebSecurity.java</span></div><h1>WebSecurity.java</h1><pre class="source lang-java linenums">package com.example.demo.security;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import static com.example.demo.security.SecurityConstants.SIGN_UP_URL;
+
+@EnableWebSecurity
+public class WebSecurity extends WebSecurityConfigurerAdapter {
+    private UserDetailsServiceImpl userDetailsService;
+    private PasswordEncoder passwordEncoder;
+
+<span class="nc" id="L22">    public WebSecurity(UserDetailsServiceImpl userDetailsService, PasswordEncoder bCryptPasswordEncoder) {</span>
+<span class="nc" id="L23">        this.userDetailsService = userDetailsService;</span>
+<span class="nc" id="L24">        this.passwordEncoder = bCryptPasswordEncoder;</span>
+<span class="nc" id="L25">    }</span>
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+<span class="nc" id="L29">        http.headers().frameOptions().disable();</span>
+<span class="nc" id="L30">        http.cors().and().csrf().disable().authorizeRequests()</span>
+<span class="nc" id="L31">                .antMatchers(HttpMethod.POST, SIGN_UP_URL).permitAll()</span>
+<span class="nc" id="L32">                .antMatchers(HttpMethod.POST, &quot;/login/**&quot;).permitAll()</span>
+<span class="nc" id="L33">                .antMatchers(HttpMethod.GET, &quot;/h2-console/**&quot;).permitAll()</span>
+<span class="nc" id="L34">                .antMatchers(HttpMethod.POST, &quot;/h2-console/**&quot;).permitAll()</span>
+<span class="nc" id="L35">                .anyRequest().authenticated()</span>
+<span class="nc" id="L36">                .and()</span>
+<span class="nc" id="L37">                .addFilter(new JWTAuthenticationFilter(authenticationManager(), passwordEncoder))</span>
+<span class="nc" id="L38">                .addFilter(new JWTAuthorizationFilter(authenticationManager()))</span>
+                // this disables session creation on Spring Security
+<span class="nc" id="L40">                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);</span>
+<span class="nc" id="L41">    }</span>
+
+    @Override
+    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+<span class="nc" id="L45">        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);</span>
+<span class="nc" id="L46">    }</span>
+
+    @Bean
+    CorsConfigurationSource corsConfigurationSource() {
+<span class="nc" id="L50">        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();</span>
+<span class="nc" id="L51">        source.registerCorsConfiguration(&quot;/**&quot;, new CorsConfiguration().applyPermitDefaultValues());</span>
+<span class="nc" id="L52">        return source;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

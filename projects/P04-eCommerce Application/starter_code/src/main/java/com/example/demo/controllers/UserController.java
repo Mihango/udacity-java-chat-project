@@ -1,6 +1,7 @@
 package com.example.demo.controllers;
 
 import com.example.demo.model.persistence.EcommerceUser;
+import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,7 @@ import com.example.demo.model.requests.CreateUserRequest;
 
 import javax.validation.Valid;
 
-@Slf4j
+@Log4j2
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
@@ -35,11 +36,13 @@ public class UserController {
 
     @GetMapping("/id/{id}")
     public ResponseEntity<EcommerceUser> findById(@PathVariable Long id) {
+        log.info("get user by id {} ", id);
         return ResponseEntity.of(userRepository.findById(id));
     }
 
     @GetMapping("/{username}")
     public ResponseEntity<EcommerceUser> findByUserName(@PathVariable String username) {
+        log.info("get user by username {} ", username);
         EcommerceUser ecommerceUser = userRepository.findByUsername(username);
         return ecommerceUser == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(ecommerceUser);
     }
@@ -50,7 +53,7 @@ public class UserController {
 
         if (!createUserRequest.getPassword().equals(createUserRequest.getConfirmPassword()) || createUserRequest.getPassword().length() < 7) {
             log.error("Error with user password. Cannot create user {}", createUserRequest.getUsername());
-        	return ResponseEntity.badRequest().body("Password is not correct");
+        	return ResponseEntity.badRequest().body(new Error("Password is not correct"));
         }
 
         EcommerceUser ecommerceUser = new EcommerceUser();
@@ -63,6 +66,7 @@ public class UserController {
         cartRepository.save(cart);
         ecommerceUser.setCart(cart);
         userRepository.save(ecommerceUser);
+        log.info("create user {} successful", createUserRequest.getUsername());
         return ResponseEntity.ok(ecommerceUser);
     }
 

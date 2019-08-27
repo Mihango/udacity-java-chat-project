@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>JWTAuthenticationFilter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">auth-course</a> &gt; <a href="index.source.html" class="el_package">com.example.demo.security</a> &gt; <span class="el_source">JWTAuthenticationFilter.java</span></div><h1>JWTAuthenticationFilter.java</h1><pre class="source lang-java linenums">package com.example.demo.security;
+
+import com.auth0.jwt.JWT;
+import com.example.demo.model.requests.LoginRequest;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import static com.auth0.jwt.algorithms.Algorithm.HMAC512;
+import static com.example.demo.security.SecurityConstants.*;
+
+<span class="nc" id="L29">@Slf4j</span>
+public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+    private AuthenticationManager authenticationManager;
+    private PasswordEncoder passwordEncoder;
+
+<span class="nc" id="L34">    public JWTAuthenticationFilter(AuthenticationManager authenticationManager, PasswordEncoder passwordEncoder) {</span>
+<span class="nc" id="L35">        this.authenticationManager = authenticationManager;</span>
+<span class="nc" id="L36">        this.passwordEncoder = passwordEncoder;</span>
+<span class="nc" id="L37">    }</span>
+
+    @Override
+    public Authentication attemptAuthentication(HttpServletRequest req,
+                                                HttpServletResponse res) throws AuthenticationException {
+        try {
+<span class="nc" id="L43">            LoginRequest creds = new ObjectMapper()</span>
+<span class="nc" id="L44">                    .readValue(req.getInputStream(), LoginRequest.class);</span>
+
+<span class="nc" id="L46">            log.error(&quot;Attempt authentication &gt;&gt;&gt;&gt;&gt;&gt;&quot; + creds.getUsername() + &quot; &gt;&gt;&gt;&gt;&gt;&gt; &quot; +creds.getPassword());</span>
+
+<span class="nc" id="L48">            return authenticationManager.authenticate(</span>
+                    new UsernamePasswordAuthenticationToken(
+<span class="nc" id="L50">                            creds.getUsername(),</span>
+<span class="nc" id="L51">                            creds.getPassword(),</span>
+<span class="nc" id="L52">                            getAuthorities())</span>
+            );
+<span class="nc" id="L54">        } catch (IOException e) {</span>
+<span class="nc" id="L55">            throw new RuntimeException(e);</span>
+        }
+    }
+
+    @Override
+    protected void successfulAuthentication(HttpServletRequest req,
+                                            HttpServletResponse res,
+                                            FilterChain chain,
+                                            Authentication auth) throws IOException, ServletException {
+
+<span class="nc" id="L65">        String token = JWT.create()</span>
+<span class="nc" id="L66">                .withSubject(((User) auth.getPrincipal()).getUsername())</span>
+<span class="nc" id="L67">                .withExpiresAt(new Date(System.currentTimeMillis() + EXPIRATION_TIME))</span>
+<span class="nc" id="L68">                .sign(HMAC512(SECRET.getBytes()));</span>
+<span class="nc" id="L69">        res.addHeader(HEADER_STRING, TOKEN_PREFIX + token);</span>
+<span class="nc" id="L70">    }</span>
+
+    private List&lt;GrantedAuthority&gt; getAuthorities() {
+<span class="nc" id="L73">        List&lt;GrantedAuthority&gt; authorities = new ArrayList&lt;GrantedAuthority&gt;();</span>
+<span class="nc" id="L74">        authorities.add(new SimpleGrantedAuthority(&quot;ROLE_USER&quot;));</span>
+<span class="nc" id="L75">        return authorities;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

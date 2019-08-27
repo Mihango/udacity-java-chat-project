@@ -21,7 +21,7 @@ public class Helper {
 		 * @return
 		 */
 		public static IntSummaryStatistics getStats(List<Integer> expYears) {
-		   return expYears.stream().mapToInt((x) ->x).summaryStatistics();
+		   return expYears.stream().mapToInt((x) -> x).summaryStatistics();
 	   }
 		
 	   

@@ -1,7 +1,6 @@
 package com.example.demo.security;
 
 import com.auth0.jwt.JWT;
-import com.example.demo.model.persistence.EcommerceUser;
 import com.example.demo.model.requests.LoginRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -30,11 +29,9 @@ import static com.example.demo.security.SecurityConstants.*;
 @Slf4j
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private AuthenticationManager authenticationManager;
-    private PasswordEncoder passwordEncoder;
 
-    public JWTAuthenticationFilter(AuthenticationManager authenticationManager, PasswordEncoder passwordEncoder) {
+    public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
         this.authenticationManager = authenticationManager;
-        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
