@@ -40,9 +40,6 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         try {
             LoginRequest creds = new ObjectMapper()
                     .readValue(req.getInputStream(), LoginRequest.class);
-
-            log.error("Attempt authentication >>>>>>" + creds.getUsername() + " >>>>>> " +creds.getPassword());
-
             return authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             creds.getUsername(),

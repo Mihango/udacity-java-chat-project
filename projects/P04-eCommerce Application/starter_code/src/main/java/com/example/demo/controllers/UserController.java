@@ -3,6 +3,8 @@ package com.example.demo.controllers;
 import com.example.demo.model.persistence.EcommerceUser;
 import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -25,6 +27,8 @@ import javax.validation.Valid;
 @RequestMapping("/api/user")
 public class UserController {
 
+    private Logger log2 = LogManager.getLogger(UserController.class);
+
     @Autowired
     private UserRepository userRepository;
 
@@ -36,7 +40,7 @@ public class UserController {
 
     @GetMapping("/id/{id}")
     public ResponseEntity<EcommerceUser> findById(@PathVariable Long id) {
-        log.info("get user by id {} ", id);
+        log2.info("get user by id {} ", id);
         return ResponseEntity.of(userRepository.findById(id));
     }
 
