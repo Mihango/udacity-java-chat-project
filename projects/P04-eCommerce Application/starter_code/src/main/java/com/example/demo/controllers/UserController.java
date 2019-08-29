@@ -27,8 +27,6 @@ import javax.validation.Valid;
 @RequestMapping("/api/user")
 public class UserController {
 
-    private Logger log2 = LogManager.getLogger(UserController.class);
-
     @Autowired
     private UserRepository userRepository;
 
@@ -40,7 +38,7 @@ public class UserController {
 
     @GetMapping("/id/{id}")
     public ResponseEntity<EcommerceUser> findById(@PathVariable Long id) {
-        log2.info("get user by id {} ", id);
+        log.info("get user by id {} ", id);
         return ResponseEntity.of(userRepository.findById(id));
     }
 

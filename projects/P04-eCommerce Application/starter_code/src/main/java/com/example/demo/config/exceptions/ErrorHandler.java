@@ -14,6 +14,8 @@ import org.springframework.transaction.TransactionSystemException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import java.util.Arrays;
+
 @Log4j2
 @ControllerAdvice
 public class ErrorHandler {
@@ -21,17 +23,15 @@ public class ErrorHandler {
     @SuppressWarnings("unchecked")
     @ExceptionHandler({AuthenticationException.class, AccessDeniedException.class})
     public ResponseEntity<?> processAccessDenied(AuthenticationException ex) {
-        // log.error("Access Denied exception thrown", ex);
         Error response = new Error();
         response.setMessage("Sorry you don't have privileges to perform this action");
-        // response.setData(new CustomEntry("description", ex.getMessage()));
-        log.error("Access Denied: Sorry you don't have privileges to perform this action", ex);
+        log.error("Access Denied: Sorry you don't have privileges to perform this action {}", Arrays.toString(ex.getStackTrace()));
         return new ResponseEntity(response, HttpStatus.FORBIDDEN);
     }
 
     @ExceptionHandler({JdbcSQLIntegrityConstraintViolationException.class, DataIntegrityViolationException.class, ConstraintViolationException.class})
     public ResponseEntity<?> processGeneralException(Exception ex) {
-        log.error("Creation Error: Data is not unique", ex);
+        log.error("Creation Error: Data is not unique {} ", Arrays.toString(ex.getStackTrace()));
         Error response = new Error();
         response.setMessage("Data is not unique ");
         return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
