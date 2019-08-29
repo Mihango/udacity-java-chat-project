@@ -61,7 +61,9 @@ public class OrderRepositoryTest {
     public void submit_new_order_expect_success() throws Exception {
         mockMvc.perform(
                 post(new URI("/api/order/submit/Sareeta"))
-                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                        .header("Authorization",
+                                "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTcGx1bmtlciIsImV4cCI6MTU2Nzk3NTMxOH0.g2sKL8s2EMIgWj37YRGQGtTlWGssmKazBRZUfNIknsdNQ34OXre6gDNw5ZoWwwcZ6Be1DWD00_Wm1eVmPeh0Gw")
+                        .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .accept(MediaType.APPLICATION_JSON_UTF8)
         )
         .andExpect(status().isOk());
@@ -71,6 +73,8 @@ public class OrderRepositoryTest {
     public void submit_new_empty_order() throws Exception {
         mockMvc.perform(
                 post(new URI("/api/order/submit/Sareeta"))
+                        .header("Authorization",
+                                "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTcGx1bmtlciIsImV4cCI6MTU2Nzk3NTMxOH0.g2sKL8s2EMIgWj37YRGQGtTlWGssmKazBRZUfNIknsdNQ34OXre6gDNw5ZoWwwcZ6Be1DWD00_Wm1eVmPeh0Gw")
                         .contentType(MediaType.APPLICATION_JSON_UTF8)
                         .accept(MediaType.APPLICATION_JSON_UTF8)
         )
